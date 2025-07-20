@@ -1,9 +1,9 @@
 from flask import Flask
-from random import randint
+import secrets
 
 app = Flask(import_name="higher_lower")
 def get_random_num():
-    rand_num = randint(0, 9)
+    rand_num = secrets.SystemRandom().randint(0, 9)
 
     return rand_num
 @app.route('/')
